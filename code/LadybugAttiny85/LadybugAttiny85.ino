@@ -17,8 +17,8 @@ enum color_mode {
 };
 
 #define LED_PIN 0
-#define RANDOM_PIN 4
-#define WAKEUP_PIN 3
+#define RANDOM_PIN 3
+#define WAKEUP_PIN 4
 #define RAINBOW_PIN 2
 #define BREATHE_PIN 1
 
