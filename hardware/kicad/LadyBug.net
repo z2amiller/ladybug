@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /Users/amiller/projects/ladybug/hardware/kicad/LadyBug.sch)
-    (date "Saturday, October 24, 2015 'PMt' 05:47:34 PM")
-    (tool "Eeschema (2015-09-17 BZR 6202)-product")
+    (source /Users/armil/projects/ladybug/hardware/kicad/LadyBug.sch)
+    (date "Saturday, November 07, 2015 'PMt' 07:26:14 PM")
+    (tool "Eeschema (2015-10-28 BZR 6285)-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -24,7 +24,7 @@
     (comp (ref U1)
       (value WS2812B)
       (footprint Pin_Headers:Pin_Header_Straight_1x04)
-      (libsource (lib WS2812b) (part WS2812B))
+      (libsource (lib LadyBug-cache) (part WS2812B))
       (sheetpath (names /) (tstamps /))
       (tstamp 562C1DCF))
     (comp (ref R1)
@@ -70,6 +70,15 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 562C2C25)))
   (libparts
+    (libpart (lib LadyBug-cache) (part WS2812B)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) WS2812B))
+      (pins
+        (pin (num 1) (name VDD) (type input))
+        (pin (num 2) (name DOUT) (type input))
+        (pin (num 3) (name VSS) (type input))
+        (pin (num 4) (name DIN) (type input))))
     (libpart (lib atmel) (part ATTINY25-S)
       (aliases
         (alias ATTINY45-S)
@@ -89,6 +98,17 @@
         (pin (num 6) (name "PB1(MISO/DO/AIN1/OC0B/OC1A/PCINT1)") (type BiDi))
         (pin (num 7) (name "PB2(SCK/USCK/SCL/T0/INT0/ADC1/PCINT2)") (type BiDi))
         (pin (num 8) (name VCC) (type power_in))))
+    (libpart (lib device) (part R)
+      (description Resistor)
+      (footprints
+        (fp R_*)
+        (fp Resistor_*))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
     (libpart (lib device) (part C)
       (description "Unpolarized capacitor")
       (footprints
@@ -100,17 +120,6 @@
       (fields
         (field (name Reference) C)
         (field (name Value) C))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistor)
-      (footprints
-        (fp R_*)
-        (fp Resistor_*))
-      (fields
-        (field (name Reference) R)
-        (field (name Value) R))
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
@@ -132,25 +141,16 @@
         (pin (num 2) (name ~) (type passive))
         (pin (num 3) (name ~) (type passive))
         (pin (num 4) (name ~) (type passive))
-        (pin (num 5) (name ~) (type passive))))
-    (libpart (lib WS2812b) (part WS2812B)
-      (fields
-        (field (name Reference) U)
-        (field (name Value) WS2812B))
-      (pins
-        (pin (num 1) (name VDD) (type input))
-        (pin (num 2) (name DOUT) (type input))
-        (pin (num 3) (name VSS) (type input))
-        (pin (num 4) (name DIN) (type input)))))
+        (pin (num 5) (name ~) (type passive)))))
   (libraries
     (library (logical conn)
-      (uri /Users/amiller/projects/kicad_libs/library/conn.lib))
-    (library (logical device)
-      (uri "/Library/Application Support/kicad/library/device.lib"))
+      (uri /Users/armil/projects/kicad-libraries/kicad_libs/library/conn.lib))
     (library (logical atmel)
       (uri "/Library/Application Support/kicad/library/atmel.lib"))
-    (library (logical WS2812b)
-      (uri /Users/amiller/projects/KicadLib/libraries/WS2812b.lib)))
+    (library (logical LadyBug-cache)
+      (uri /Users/armil/projects/ladybug/hardware/kicad/LadyBug-cache.lib))
+    (library (logical device)
+      (uri "/Library/Application Support/kicad/library/device.lib")))
   (nets
     (net (code 1) (name +5V)
       (node (ref C3) (pin 2))

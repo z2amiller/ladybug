@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:LadyBug-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -39,7 +40,7 @@ LIBS:w_relay
 LIBS:w_rtx
 LIBS:w_transistor
 LIBS:w_vacuum
-LIBS:WS2812b
+LIBS:LadyBug-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
