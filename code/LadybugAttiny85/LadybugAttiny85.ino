@@ -51,7 +51,7 @@ void shutDown() {
   strip.setPixelColor(0, 0);
   strip.show();
   sbi(GIMSK, PCIE);  // Turn on Pin Change interrupt
-  sbi(PCMSK, PCINT3); // Which pins are affected by the interru                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   pt
+  sbi(PCMSK, PCINT3); // Which pins are affected by the interrupt
   powerDown();
   cbi(GIMSK, PCIE);  // Turn on Pin Change interrupt
   cbi(PCMSK, PCINT3); // Which pins are affected by the interrupt
@@ -115,8 +115,4 @@ void loop() {
       randomizer.update();
       break;
   }
-
 }
-
-
-
